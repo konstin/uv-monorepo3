@@ -5,26 +5,20 @@ requires-python = ">=3.12"
 members = [
     "api",
     "domain",
-    "uv-monorepo2",
 ]
 
 [[package]]
 name = "api"
 version = "0.1.0"
-source = { editable = "src/api" }
+source = { editable = "." }
 dependencies = [
     { name = "domain" },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "domain", editable = "src/domain" }]
+requires-dist = [{ name = "domain", editable = "packages/domain" }]
 
 [[package]]
 name = "domain"
 version = "0.1.0"
-source = { editable = "src/domain" }
-
-[[package]]
-name = "uv-monorepo2"
-version = "0.1.0"
-source = { virtual = "." }
+source = { editable = "packages/domain" }

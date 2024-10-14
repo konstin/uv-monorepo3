@@ -1,10 +1,22 @@
 [project]
-name = "uv-monorepo2"
+name = "api"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "domain",
+]
+
+[project.scripts]
+uv-monorepo3 = "api.main:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv.sources]
+domain = { workspace = true }
 
 [tool.uv.workspace]
-members = ["src/api", "src/domain"]
+members = ["packages/*"]
